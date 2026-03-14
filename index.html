@@ -7,7 +7,11 @@
   <title>Mayyah Thaimassage – Traditionelle Thai Massage in Odenthal</title>
   <meta
     name="description"
-    content="Mayyah Thaimassage in Odenthal – traditionelle Thai Massage, Aromaöl, Hot Stone, Kräuterstempel, Fußmassage, Rückenmassage und Paarmassage. Jetzt Termin per Telefon oder WhatsApp sichern."
+    content="Mayyah Thaimassage in Odenthal – traditionelle Thai Massage, Aromaöl Massage, Hot Stone, Kräuterstempel, Rückenmassage, Fußmassage, Paarmassage und Gutscheine. Jetzt Termin per Telefon oder WhatsApp sichern."
+  />
+  <meta
+    name="keywords"
+    content="Thai Massage Odenthal, Thaimassage Odenthal, Massage Odenthal, Hot Stone Massage Odenthal, Aromaöl Massage Odenthal, Paarmassage Odenthal, Rückenmassage Odenthal"
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,19 +24,22 @@
   <style>
     :root{
       --bg:#12051f;
-      --bg2:#1b0a2a;
-      --bg3:#241037;
-      --card:rgba(255,255,255,0.05);
-      --card-strong:rgba(255,255,255,0.08);
+      --bg2:#1a0b28;
+      --bg3:#261039;
+      --card:rgba(255,255,255,0.055);
+      --card-strong:rgba(255,255,255,0.09);
       --border:rgba(255,255,255,0.11);
       --text:#ffffff;
       --muted:rgba(255,255,255,0.82);
+      --soft:rgba(255,255,255,0.68);
       --gold:#d4af37;
       --gold2:#f6d365;
-      --gold-soft:rgba(212,175,55,0.18);
-      --shadow:0 18px 45px rgba(0,0,0,0.38);
-      --radius:22px;
-      --max:1220px;
+      --gold-soft:rgba(212,175,55,0.16);
+      --shadow:0 18px 48px rgba(0,0,0,0.38);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1240px;
+      --success:#27d17f;
     }
 
     *{
@@ -48,14 +55,15 @@
     body{
       font-family:"Poppins",sans-serif;
       color:var(--text);
-      line-height:1.65;
+      line-height:1.7;
       background:
-        linear-gradient(rgba(18,5,31,.90), rgba(18,5,31,.92)),
+        linear-gradient(rgba(18,5,31,.90), rgba(18,5,31,.94)),
         url("images/pattern.webp");
       background-repeat:repeat;
       background-size:520px auto;
       background-position:center top;
       background-attachment:fixed;
+      overflow-x:hidden;
     }
 
     img{
@@ -73,12 +81,28 @@
       margin:0 auto;
     }
 
+    .announcement-bar{
+      background:linear-gradient(90deg, rgba(246,211,101,.18), rgba(212,175,55,.08));
+      border-bottom:1px solid rgba(255,255,255,.08);
+      color:#fff5d8;
+      font-size:.92rem;
+    }
+
+    .announcement-inner{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px 18px;
+      text-align:center;
+      padding:10px 0;
+    }
+
     .topbar{
       position:sticky;
       top:0;
       z-index:1000;
       backdrop-filter:blur(14px);
-      background:rgba(17,6,27,0.82);
+      background:rgba(16,6,25,0.84);
       border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
@@ -112,7 +136,7 @@
     .brand-text strong{
       display:block;
       font-family:"Cormorant Garamond",serif;
-      font-size:1.75rem;
+      font-size:1.85rem;
       color:var(--gold2);
       line-height:1;
       letter-spacing:.02em;
@@ -120,8 +144,8 @@
 
     .brand-text span{
       display:block;
-      font-size:.85rem;
-      color:rgba(255,255,255,.76);
+      font-size:.86rem;
+      color:rgba(255,255,255,.74);
       margin-top:3px;
     }
 
@@ -131,7 +155,12 @@
       justify-content:flex-end;
       gap:18px;
       font-size:.95rem;
-      color:rgba(255,255,255,.9);
+      color:rgba(255,255,255,.92);
+    }
+
+    .nav-links a{
+      position:relative;
+      transition:.2s ease;
     }
 
     .nav-links a:hover{
@@ -139,36 +168,46 @@
     }
 
     .hero{
-      min-height:94vh;
+      min-height:95vh;
       display:flex;
       align-items:center;
       position:relative;
       overflow:hidden;
       background:
-        linear-gradient(rgba(0,0,0,.46), rgba(0,0,0,.74)),
-        radial-gradient(circle at 20% 20%, rgba(212,175,55,.18), transparent 28%),
+        linear-gradient(rgba(0,0,0,.44), rgba(0,0,0,.78)),
+        radial-gradient(circle at 15% 18%, rgba(246,211,101,.16), transparent 24%),
+        radial-gradient(circle at 82% 24%, rgba(212,175,55,.12), transparent 20%),
         url("images/hero.webp");
       background-size:cover;
       background-position:center;
     }
 
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, transparent 0%, rgba(18,5,31,.12) 60%, rgba(18,5,31,.64) 100%);
+      pointer-events:none;
+    }
+
     .hero::after{
       content:"";
       position:absolute;
-      inset:auto -120px -120px auto;
-      width:340px;
-      height:340px;
-      background:radial-gradient(circle, rgba(212,175,55,.18), transparent 68%);
+      right:-110px;
+      bottom:-110px;
+      width:360px;
+      height:360px;
+      background:radial-gradient(circle, rgba(212,175,55,.16), transparent 70%);
       pointer-events:none;
     }
 
     .hero-inner{
       position:relative;
       z-index:1;
-      width:min(980px, 100%);
+      width:min(1000px, 100%);
       margin:0 auto;
       text-align:center;
-      padding:90px 0 80px;
+      padding:100px 0 86px;
     }
 
     .eyebrow{
@@ -179,16 +218,16 @@
       padding:10px 16px;
       border-radius:999px;
       background:rgba(255,255,255,.09);
-      border:1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.14);
       color:var(--gold2);
-      font-size:.9rem;
+      font-size:.92rem;
       margin-bottom:20px;
     }
 
     .hero-logo{
-      width:min(230px, 46vw);
-      margin:0 auto 20px;
-      filter:drop-shadow(0 14px 26px rgba(0,0,0,.45));
+      width:min(240px, 48vw);
+      margin:0 auto 22px;
+      filter:drop-shadow(0 14px 26px rgba(0,0,0,.48));
     }
 
     h1,h2,h3,h4{
@@ -198,16 +237,20 @@
     }
 
     h1{
-      font-size:clamp(2.8rem, 6vw, 5.4rem);
+      font-size:clamp(3rem, 6vw, 5.6rem);
       margin-bottom:16px;
       color:#fff8ea;
     }
 
     .hero p{
-      max-width:840px;
+      max-width:860px;
       margin:0 auto;
       font-size:1.08rem;
-      color:rgba(255,255,255,.9);
+      color:rgba(255,255,255,.92);
+    }
+
+    .hero p + p{
+      margin-top:12px;
     }
 
     .hero-cta{
@@ -215,7 +258,7 @@
       flex-wrap:wrap;
       justify-content:center;
       gap:14px;
-      margin-top:28px;
+      margin-top:30px;
     }
 
     .btn{
@@ -223,15 +266,14 @@
       align-items:center;
       justify-content:center;
       gap:10px;
-      min-height:50px;
+      min-height:52px;
       padding:13px 20px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.05);
       color:#fff;
       font-weight:600;
       transition:.22s ease;
-      box-shadow:none;
     }
 
     .btn:hover{
@@ -242,16 +284,16 @@
     .btn.primary{
       background:linear-gradient(135deg, var(--gold2), var(--gold));
       color:#2a1202;
-      border-color:rgba(212,175,55,.38);
-      box-shadow:0 16px 32px rgba(212,175,55,.18);
+      border-color:rgba(212,175,55,.34);
+      box-shadow:0 16px 34px rgba(212,175,55,.18);
     }
 
     .btn.secondary{
-      background:rgba(255,255,255,.07);
+      background:rgba(255,255,255,.08);
     }
 
     .hero-facts{
-      margin-top:26px;
+      margin-top:28px;
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
@@ -264,33 +306,34 @@
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.10);
       font-size:.92rem;
-      color:rgba(255,255,255,.92);
+      color:rgba(255,255,255,.94);
     }
 
     section{
-      padding:82px 0;
+      padding:88px 0;
+      position:relative;
     }
 
     .section-head{
-      margin-bottom:28px;
+      margin-bottom:30px;
       display:flex;
       flex-direction:column;
       gap:10px;
     }
 
     .section-head h2{
-      font-size:clamp(2.2rem, 4vw, 3.2rem);
+      font-size:clamp(2.3rem, 4vw, 3.25rem);
       color:var(--gold2);
     }
 
     .section-head p{
       color:var(--muted);
-      max-width:860px;
+      max-width:900px;
     }
 
     .grid-2{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
+      grid-template-columns:1.02fr .98fr;
       gap:30px;
       align-items:center;
     }
@@ -302,8 +345,9 @@
     .gallery-card,
     .contact-card,
     .highlight-box,
-    .price-table{
-      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
+    .price-table,
+    .promo-box{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
@@ -313,13 +357,15 @@
     .info-box,
     .feature-box,
     .contact-card,
-    .highlight-box{
-      padding:24px;
+    .highlight-box,
+    .promo-box{
+      padding:26px;
     }
 
     .studio-image,
     .about-image{
       width:100%;
+      min-height:440px;
       border-radius:var(--radius);
       border:1px solid var(--border);
       box-shadow:var(--shadow);
@@ -334,7 +380,7 @@
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-top:18px;
+      margin-top:20px;
     }
 
     .badge{
@@ -344,22 +390,44 @@
       gap:8px;
       padding:9px 13px;
       border-radius:999px;
-      background:rgba(255,255,255,.05);
+      background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
       font-size:.88rem;
       color:#fff;
+    }
+
+    .promo-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:24px;
+    }
+
+    .promo-box{
+      text-align:left;
+    }
+
+    .promo-box h3{
+      color:#fff7e3;
+      font-size:1.7rem;
+      margin-bottom:8px;
+    }
+
+    .promo-box p{
+      color:var(--muted);
+      font-size:.96rem;
     }
 
     .feature-grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:18px;
-      margin-top:20px;
+      margin-top:22px;
     }
 
     .feature-box h3{
       color:#fff7e3;
-      font-size:1.6rem;
+      font-size:1.7rem;
       margin-bottom:8px;
     }
 
@@ -378,6 +446,7 @@
     .announcement img{
       width:100%;
       height:100%;
+      min-height:390px;
       object-fit:cover;
       border-radius:var(--radius);
       border:1px solid var(--border);
@@ -385,7 +454,7 @@
     }
 
     .announcement .info-box h3{
-      font-size:2rem;
+      font-size:2.05rem;
       color:#fff7e3;
       margin-bottom:10px;
     }
@@ -416,7 +485,7 @@
     }
 
     .service-image{
-      height:190px;
+      height:200px;
       overflow:hidden;
       background:#000;
     }
@@ -425,6 +494,11 @@
       width:100%;
       height:100%;
       object-fit:cover;
+      transition:transform .35s ease;
+    }
+
+    .service-card:hover .service-image img{
+      transform:scale(1.04);
     }
 
     .service-content{
@@ -432,7 +506,7 @@
     }
 
     .service-content h3{
-      font-size:1.75rem;
+      font-size:1.8rem;
       color:#fff7e3;
       margin-bottom:8px;
     }
@@ -441,7 +515,7 @@
       color:var(--muted);
       font-size:.95rem;
       margin-bottom:14px;
-      min-height:72px;
+      min-height:94px;
     }
 
     .prices{
@@ -465,9 +539,9 @@
     }
 
     .highlights{
-      margin-top:26px;
+      margin-top:28px;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.08fr .92fr;
       gap:22px;
     }
 
@@ -492,7 +566,7 @@
 
     .price-table{
       overflow:hidden;
-      margin-top:22px;
+      margin-top:24px;
     }
 
     .price-table-header{
@@ -502,7 +576,7 @@
     }
 
     .price-table-header h3{
-      font-size:1.9rem;
+      font-size:1.95rem;
       color:#fff7e3;
     }
 
@@ -534,6 +608,13 @@
       border-bottom:none;
     }
 
+    .benefit-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+      margin-top:20px;
+    }
+
     .gallery-grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -542,12 +623,18 @@
 
     .gallery-card{
       overflow:hidden;
+      position:relative;
     }
 
     .gallery-card img{
       width:100%;
-      height:260px;
+      height:300px;
       object-fit:cover;
+      transition:transform .35s ease;
+    }
+
+    .gallery-card:hover img{
+      transform:scale(1.05);
     }
 
     .voucher-grid{
@@ -588,14 +675,14 @@
     }
 
     .cta-row{
-      margin-top:16px;
+      margin-top:18px;
       display:flex;
       flex-wrap:wrap;
       gap:12px;
     }
 
     .map-wrap{
-      height:380px;
+      height:390px;
       overflow:hidden;
       border-radius:var(--radius);
       border:1px solid var(--border);
@@ -609,13 +696,32 @@
     }
 
     .notice{
-      margin-top:12px;
-      font-size:.9rem;
-      color:rgba(255,255,255,.7);
+      margin-top:14px;
+      font-size:.92rem;
+      color:rgba(255,255,255,.74);
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1200;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:58px;
+      min-height:58px;
+      padding:0 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, #2fe784, #11b862);
+      color:#fff;
+      font-weight:700;
+      box-shadow:0 18px 30px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.18);
     }
 
     footer{
-      padding:32px 0 46px;
+      padding:34px 0 48px;
       border-top:1px solid rgba(255,255,255,.08);
       background:#0b0215;
     }
@@ -629,7 +735,8 @@
       font-size:.95rem;
     }
 
-    @media (max-width: 1080px){
+    @media (max-width: 1100px){
+      .promo-grid,
       .feature-grid,
       .gallery-grid{
         grid-template-columns:1fr 1fr;
@@ -662,15 +769,17 @@
       }
 
       .brand-text strong{
-        font-size:1.5rem;
+        font-size:1.52rem;
       }
 
       section{
-        padding:64px 0;
+        padding:68px 0;
       }
 
+      .promo-grid,
       .feature-grid,
-      .gallery-grid{
+      .gallery-grid,
+      .benefit-grid{
         grid-template-columns:1fr;
       }
 
@@ -679,19 +788,25 @@
       }
 
       .hero-inner{
-        padding:70px 0 64px;
+        padding:74px 0 66px;
       }
 
       .card,
       .info-box,
       .feature-box,
       .contact-card,
-      .highlight-box{
+      .highlight-box,
+      .promo-box{
         padding:20px;
       }
 
+      .studio-image,
+      .announcement img{
+        min-height:unset;
+      }
+
       .service-image{
-        height:210px;
+        height:220px;
       }
 
       .gallery-card img{
@@ -707,10 +822,25 @@
       .footer-inner{
         flex-direction:column;
       }
+
+      .whatsapp-float{
+        right:14px;
+        bottom:14px;
+        min-width:54px;
+        min-height:54px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <span><strong>10% Eröffnungsrabatt</strong> auf Ihren Besuch</span>
+      <span>🅿️ Kostenloses Parken direkt am Haus</span>
+      <span>📞 Termin per Telefon oder WhatsApp</span>
+    </div>
+  </div>
 
   <div class="topbar">
     <div class="container nav">
@@ -723,11 +853,11 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#studio">Studio</a>
+        <a href="#studio">Über uns</a>
         <a href="#leistungen">Leistungen</a>
         <a href="#preise">Preise</a>
         <a href="#gutscheine">Gutscheine</a>
-        <a href="#eindruecke">Eindrücke</a>
+        <a href="#eindruecke">Studio</a>
         <a href="#anfahrt">Anfahrt</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -736,25 +866,32 @@
 
   <header class="hero" id="top">
     <div class="container hero-inner">
-      <div class="eyebrow">Traditionelle Thai-Massage für Körper und Seele</div>
+      <div class="eyebrow">Traditionelle Thai-Massage für Körper, Geist und Wohlbefinden</div>
       <img class="hero-logo" src="images/logo.webp" alt="Mayyah Thaimassage Logo" />
-      <h1>Entspannung, Regeneration und Wohlbefinden</h1>
+
+      <h1>Entspannung auf höchstem Niveau</h1>
+
       <p>
-        Willkommen bei <strong>Mayyah Thaimassage</strong> in Odenthal. In ruhiger Atmosphäre bieten wir Ihnen
-        traditionelle Thai-Massagen, Aromaöl-Massagen, Hot-Stone-Behandlungen, Kräuterstempel,
-        Fuß- und Rückenmassagen sowie entspannende Anwendungen für Körper und Geist.
+        Willkommen bei <strong>Mayyah Thaimassage</strong> – Ihrer Oase der Entspannung in Odenthal.
+        Genießen Sie traditionelle Thai-Massagen, wohltuende Aromaöl-Behandlungen, Hot-Stone-Massagen
+        und weitere Anwendungen für Körper und Seele.
+      </p>
+      <p>
+        Unsere erfahrenen Mitarbeiterinnen verbinden bewährte Massagetechniken mit einer ruhigen,
+        gepflegten Atmosphäre – für mehr Regeneration, Lockerung und Wohlbefinden im Alltag.
       </p>
 
       <div class="hero-cta">
         <a class="btn primary" href="https://wa.me/4917643195587" target="_blank" rel="noopener noreferrer">Termin per WhatsApp</a>
         <a class="btn secondary" href="tel:021747401974">Jetzt anrufen</a>
-        <a class="btn secondary" href="#leistungen">Massagen ansehen</a>
+        <a class="btn secondary" href="#leistungen">Leistungen ansehen</a>
       </div>
 
       <div class="hero-facts">
         <span>Hauptstraße 53a · 51519 Odenthal</span>
         <span>Mo–Fr 10:00–19:00 Uhr</span>
         <span>Sa 10:00–18:00 Uhr</span>
+        <span>Kostenlose Parkplätze am Haus</span>
         <span>KEINE EROTIKMASSAGE</span>
       </div>
     </div>
@@ -766,29 +903,32 @@
         <div class="section-head">
           <h2>Willkommen bei Mayyah Thaimassage</h2>
           <p>
-            Unser Studio verbindet traditionelle Thai-Wellness mit einer gepflegten, ruhigen und hochwertigen Atmosphäre.
-            Im Mittelpunkt stehen Entspannung, Hygiene, Regeneration und ein professioneller Service.
+            Herzlich willkommen in Ihrer stilvollen Oase der Entspannung in Odenthal.
+            Bei uns stehen Wohlbefinden, professionelle Anwendungen und höchste Hygienestandards im Mittelpunkt.
           </p>
         </div>
 
         <div class="grid-2">
           <div class="card text-block">
             <p>
-              Die traditionelle thailändische Massage – auch <strong>Nuad Thai</strong> genannt – blickt auf eine jahrhundertealte
-              Geschichte zurück und verbindet Einflüsse aus Indien, China und Südostasien.
+              Bei <strong>Mayyah Thaimassage</strong> verbinden wir traditionelle thailändische Massagekunst
+              mit einem modernen und gepflegten Wellness-Ambiente. Unser Ziel ist es, Ihnen eine wohltuende
+              Auszeit vom Alltag zu ermöglichen und Körper sowie Geist wieder in Einklang zu bringen.
             </p>
             <p>
-              Ziel ist es, Verspannungen zu lösen, die Beweglichkeit zu verbessern, die Durchblutung zu fördern
-              und Körper sowie Geist wieder in Balance zu bringen.
+              Die traditionelle thailändische Massage – auch <strong>Nuad Thai</strong> genannt – blickt auf
+              eine jahrhundertealte Geschichte zurück. Durch gezielte Druckpunkttechniken, Dehnungen und
+              fließende Bewegungen können Verspannungen gelöst, die Beweglichkeit gefördert und die
+              Durchblutung unterstützt werden.
             </p>
             <p>
-              Bei Mayyah Thaimassage legen wir großen Wert auf eine angenehme Atmosphäre, auf Sauberkeit
-              und auf einen respektvollen, professionellen Umgang mit unseren Kundinnen und Kunden.
+              Unsere qualifizierten Mitarbeiterinnen verfügen über langjährige Erfahrung und legen größten
+              Wert auf eine ruhige Atmosphäre, respektvollen Service und professionelle Behandlungen.
             </p>
 
             <div class="badge-row">
               <span class="badge">Traditionelle Thai-Massage</span>
-              <span class="badge">Hygiene & Sauberkeit</span>
+              <span class="badge">Höchste Hygiene</span>
               <span class="badge">Erholung & Regeneration</span>
               <span class="badge">Nach tel. Vereinbarung</span>
             </div>
@@ -797,23 +937,47 @@
           <img class="studio-image" src="images/empfang.webp" alt="Empfang von Mayyah Thaimassage" />
         </div>
 
+        <div class="promo-grid">
+          <div class="promo-box">
+            <h3>10% Eröffnungsrabatt</h3>
+            <p>
+              Lernen Sie unser Studio und unsere Anwendungen jetzt zum attraktiven Eröffnungspreis kennen.
+            </p>
+          </div>
+          <div class="promo-box">
+            <h3>Mayyah 2 in 1</h3>
+            <p>
+              90 Minuten klassische Thai Massage plus 30 Minuten Fußmassage – insgesamt 120 Minuten für nur 99€.
+            </p>
+          </div>
+          <div class="promo-box">
+            <h3>Gutscheine</h3>
+            <p>
+              Verschenken Sie pure Entspannung und Wohlbefinden mit einem Gutschein von Mayyah Thaimassage.
+            </p>
+          </div>
+        </div>
+
         <div class="feature-grid">
           <div class="feature-box">
             <h3>Hygiene</h3>
             <p>
-              Unsere Betten sind mit Medizin-Auflagen ausgelegt und werden nach jeder Benutzung sorgfältig gewechselt.
+              Unsere Massagebetten sind mit medizinischen Schutzauflagen ausgestattet, die nach jeder Behandlung
+              sorgfältig gewechselt werden.
             </p>
           </div>
           <div class="feature-box">
-            <h3>Erfahrung</h3>
+            <h3>Saubere Raumluft</h3>
             <p>
-              Unsere Mitarbeiterinnen verfügen über qualifizierte Ausbildung und langjährige Erfahrung.
+              Luftreiniger von <strong>TruSens Z3000</strong> unterstützen ein frisches und angenehmes Raumklima
+              und unterstreichen unseren hohen Anspruch an Sauberkeit und Wohlbefinden.
             </p>
           </div>
           <div class="feature-box">
             <h3>Atmosphäre</h3>
             <p>
-              Ruhige Räume, hochwertige Einrichtung und ein gepflegtes Ambiente sorgen für ein entspanntes Erlebnis.
+              Ruhige Räume, ein gepflegtes Ambiente und liebevoll abgestimmte Details sorgen für eine entspannte,
+              hochwertige Wellness-Erfahrung.
             </p>
           </div>
         </div>
@@ -823,32 +987,38 @@
     <section>
       <div class="container">
         <div class="section-head">
-          <h2>Neueröffnung & Studio-Informationen</h2>
+          <h2>Neueröffnung & wichtige Informationen</h2>
           <p>
-            Alle wichtigen Informationen auf einen Blick – von Öffnungszeiten bis hin zu Ihrem ersten Besuch bei uns.
+            Alle wichtigen Informationen auf einen Blick – von Öffnungszeiten bis zu Ihrem ersten Besuch.
           </p>
         </div>
 
         <div class="announcement">
-          <img src="images/hero.webp" alt="Mayyah Thaimassage Neueröffnung" />
+          <img src="images/hero.webp" alt="Mayyah Thaimassage Studio in Odenthal" />
           <div class="info-box">
-            <h3>Herzlich willkommen in Odenthal</h3>
+            <h3>Ihre Oase der Entspannung in Odenthal</h3>
             <p>
               Unser Studio befindet sich in der <strong>Hauptstraße 53a, 51519 Odenthal</strong>.
-              Wir freuen uns, Sie in einer stilvollen und entspannten Umgebung begrüßen zu dürfen.
+              Freuen Sie sich auf eine ruhige, gepflegte und stilvolle Atmosphäre mit kostenlosen
+              Parkmöglichkeiten direkt am Haus.
             </p>
 
             <ul class="list">
+              <li><strong>10% Eröffnungsrabatt</strong> – unser Kennenlern-Angebot</li>
               <li><strong>Mo – Fr:</strong> 10:00 – 19:00 Uhr</li>
               <li><strong>Sa:</strong> 10:00 – 18:00 Uhr</li>
               <li><strong>So:</strong> Ruhetag</li>
-              <li>Auch <strong>nach telefonischer Vereinbarung</strong></li>
+              <li>Zusätzlich <strong>nach telefonischer Vereinbarung</strong></li>
               <li><strong>KEINE EROTIKMASSAGE</strong></li>
             </ul>
 
             <div class="cta-row">
               <a class="btn primary" href="https://wa.me/4917643195587" target="_blank" rel="noopener noreferrer">WhatsApp schreiben</a>
               <a class="btn secondary" href="tel:021747401974">02174 7401974</a>
+            </div>
+
+            <div class="notice">
+              Wir freuen uns darauf, Sie persönlich bei Mayyah Thaimassage begrüßen zu dürfen.
             </div>
           </div>
         </div>
@@ -860,8 +1030,8 @@
         <div class="section-head">
           <h2>Massagen & Anwendungen</h2>
           <p>
-            Unser Angebot umfasst klassische traditionelle Anwendungen, entspannende Öl-Massagen
-            sowie spezialisierte Behandlungen für Rücken, Füße, Gesicht und mehr.
+            Unser Angebot umfasst klassische Thai-Massagen, entspannende Öl-Behandlungen
+            sowie spezialisierte Anwendungen für Rücken, Füße, Kopf, Gesicht, Kinder und Paare.
           </p>
         </div>
 
@@ -873,8 +1043,8 @@
             <div class="service-content">
               <h3>Klassische Thaimassage</h3>
               <p>
-                Traditionelle Druckpunktmassage kombiniert mit Dehnungen. Fördert die Durchblutung,
-                lockert die Muskulatur und unterstützt die natürliche Regeneration.
+                Traditionelle Druckpunktmassage kombiniert mit Dehnungen. Kann Verspannungen lösen,
+                die Durchblutung fördern und die natürliche Regeneration unterstützen.
               </p>
               <div class="prices">
                 <span class="price-pill"><strong>60 Min</strong> 55€</span>
@@ -890,8 +1060,8 @@
             <div class="service-content">
               <h3>Aromaöl Massage</h3>
               <p>
-                Sanfte und entspannende Behandlung mit ätherischen Massageölen.
-                Ideal zum Stressabbau und für ein wohltuendes Körpergefühl.
+                Sanfte und beruhigende Behandlung mit wohltuenden Massageölen.
+                Ideal zum Abschalten, Entspannen und Loslassen von Alltagsstress.
               </p>
               <div class="prices">
                 <span class="price-pill"><strong>60 Min</strong> 60€</span>
@@ -907,8 +1077,8 @@
             <div class="service-content">
               <h3>Thai Yoga Massage</h3>
               <p>
-                Eine Kombination aus passiven Dehnungen, Streckungen und Druckpunkttechniken
-                zur Aktivierung von Beweglichkeit und Energiefluss.
+                Eine Kombination aus passiven Dehnungen, Streckungen und Druckpunkttechniken,
+                die Beweglichkeit, Körpergefühl und Energiefluss fördern kann.
               </p>
               <div class="prices">
                 <span class="price-pill"><strong>60 Min</strong> 60€</span>
@@ -924,8 +1094,8 @@
             <div class="service-content">
               <h3>Hot-Stone-Massage</h3>
               <p>
-                Entspannende Ganzkörpermassage mit erwärmten Steinen und warmen Ölen.
-                Besonders angenehm bei Verspannungen und zur tiefen Entspannung.
+                Entspannende Ganzkörpermassage mit warmen Steinen und wohltuender Wärme.
+                Besonders angenehm bei muskulären Verspannungen und Stress.
               </p>
               <div class="prices">
                 <span class="price-pill"><strong>60 Min</strong> 65€</span>
@@ -936,13 +1106,13 @@
 
           <article class="service-card">
             <div class="service-image">
-              <img src="images/kraeuterstempel.webp" alt="Kräuterstempel Massage" />
+              <img src="images/kraeuterstempel.webp" alt="Kräuter-Stempel-Massage" />
             </div>
             <div class="service-content">
-              <h3>Kräuterstempel Massage</h3>
+              <h3>Kräuter-Stempel-Massage</h3>
               <p>
-                Mit Dampf erhitzte Kräuterkompressen ergänzen die Massage
-                und sorgen für ein intensives, wohltuendes Wärmegefühl.
+                Erwärmte Kräuterkompressen ergänzen die Massage und sorgen für ein intensives,
+                wohltuendes Wärmegefühl und tiefe Entspannung.
               </p>
               <div class="prices">
                 <span class="price-pill"><strong>60 Min</strong> 65€</span>
@@ -959,11 +1129,10 @@
               <h3>Kopf- & Gesichtsmassage</h3>
               <p>
                 Sanfte Berührungen und gezielte Druckpunkte im Kopf- und Gesichtsbereich
-                fördern Entspannung, Durchblutung und ein angenehmes Wohlgefühl.
+                fördern Entspannung, Wohlgefühl und eine kleine Auszeit vom Alltag.
               </p>
               <div class="prices">
-                <span class="price-pill"><strong>30 Min</strong> 30€</span>
-                <span class="price-pill"><strong>60 Min</strong> 60€</span>
+                <span class="price-pill"><strong>30 Min</strong> 35€</span>
               </div>
             </div>
           </article>
@@ -975,12 +1144,11 @@
             <div class="service-content">
               <h3>Fußmassage</h3>
               <p>
-                Eine Wohltat für müde Füße. Die Massage stimuliert Fuß- und Nervenendpunkte
-                und sorgt für tiefe Entspannung im ganzen Körper.
+                Eine Wohltat für müde und beanspruchte Füße. Die Anwendung kann entspannend wirken
+                und ein angenehm leichtes Körpergefühl unterstützen.
               </p>
               <div class="prices">
-                <span class="price-pill"><strong>30 Min</strong> 30€</span>
-                <span class="price-pill"><strong>60 Min</strong> 60€</span>
+                <span class="price-pill"><strong>30 Min</strong> 35€</span>
               </div>
             </div>
           </article>
@@ -992,12 +1160,11 @@
             <div class="service-content">
               <h3>Rückenmassage</h3>
               <p>
-                Speziell für Nacken, Schulter und Rücken. Ideal bei sitzender Tätigkeit,
-                Alltagsstress und muskulären Verspannungen.
+                Speziell für Rücken, Nacken und Schulterbereich. Ideal bei sitzender Tätigkeit,
+                muskulären Verspannungen und stressigem Alltag.
               </p>
               <div class="prices">
-                <span class="price-pill"><strong>30 Min</strong> 30€</span>
-                <span class="price-pill"><strong>60 Min</strong> 60€</span>
+                <span class="price-pill"><strong>30 Min</strong> 35€</span>
               </div>
             </div>
           </article>
@@ -1009,7 +1176,7 @@
             <div class="service-content">
               <h3>Massage for Kids</h3>
               <p>
-                Sanfte Massage für Kinder mit angenehmer, ruhiger Behandlung.
+                Sanfte und ruhige Behandlung für Kinder mit angenehmer Atmosphäre.
                 Fördert Entspannung und ein positives Körpergefühl.
               </p>
               <div class="prices">
@@ -1024,12 +1191,12 @@
           <div class="highlight-box">
             <h3>Unsere Empfehlung</h3>
             <p>
-              Das <strong>Mayyah 2 in 1 Spezial Paket</strong> kombiniert zwei beliebte Anwendungen
-              in einer besonders wohltuenden Behandlung.
+              Das <strong>Mayyah 2 in 1 Spezial-Paket</strong> gehört zu unseren beliebtesten Angeboten
+              und kombiniert zwei besonders wohltuende Anwendungen in einer Behandlung.
             </p>
             <ul class="list">
               <li>Klassische Thai Massage mit oder ohne Öl – <strong>90 Minuten</strong></li>
-              <li>Fußmassage inkl. Fußbad – <strong>30 Minuten</strong></li>
+              <li>Fußmassage – <strong>30 Minuten</strong></li>
               <li><strong>Gesamtdauer: 120 Minuten · 99€</strong></li>
             </ul>
           </div>
@@ -1037,14 +1204,14 @@
           <div class="highlight-box">
             <h3>Doppel- / Paarmassage</h3>
             <p>
-              In unserem Doppelmassageraum werden Sie zeitgleich nebeneinander massiert –
-              ideal für Paare, Freunde oder gemeinsame Wellness-Zeit.
+              In unserem Doppelmassageraum können Sie die Massage gemeinsam genießen –
+              ideal für Paare, Freunde oder als gemeinsame Wellness-Zeit.
             </p>
             <div class="prices" style="margin-top:14px;">
               <span class="price-pill"><strong>60 Min</strong> 100€</span>
             </div>
             <p style="margin-top:14px;">
-              Hot Stone oder Kräuterstempel sind bei der Paarmassage gegen Aufpreis möglich.
+              Gemeinsam entspannen, abschalten und neue Energie tanken.
             </p>
             <div class="cta-row">
               <a class="btn primary" href="https://wa.me/4917643195587" target="_blank" rel="noopener noreferrer">Paarmassage anfragen</a>
@@ -1059,7 +1226,7 @@
         <div class="section-head">
           <h2>Preisübersicht</h2>
           <p>
-            Hier finden Sie alle Leistungen übersichtlich zusammengefasst.
+            Hier finden Sie alle Leistungen von Mayyah Thaimassage übersichtlich zusammengefasst.
           </p>
         </div>
 
@@ -1097,24 +1264,24 @@
                 <td>65€ / 85€</td>
               </tr>
               <tr>
-                <td>Kräuterstempel Massage</td>
+                <td>Kräuter-Stempel-Massage</td>
                 <td>60 / 90 Min</td>
                 <td>65€ / 85€</td>
               </tr>
               <tr>
                 <td>Kopf- & Gesichtsmassage</td>
-                <td>30 / 60 Min</td>
-                <td>30€ / 60€</td>
+                <td>30 Min</td>
+                <td>35€</td>
               </tr>
               <tr>
                 <td>Fußmassage</td>
-                <td>30 / 60 Min</td>
-                <td>30€ / 60€</td>
+                <td>30 Min</td>
+                <td>35€</td>
               </tr>
               <tr>
                 <td>Rückenmassage</td>
-                <td>30 / 60 Min</td>
-                <td>30€ / 60€</td>
+                <td>30 Min</td>
+                <td>35€</td>
               </tr>
               <tr>
                 <td>Massage for Kids</td>
@@ -1122,7 +1289,7 @@
                 <td>23€ / 45€</td>
               </tr>
               <tr>
-                <td>Mayyah 2 in 1 Spezial Paket</td>
+                <td>Mayyah 2 in 1 Spezial-Paket</td>
                 <td>120 Min</td>
                 <td>99€</td>
               </tr>
@@ -1140,36 +1307,68 @@
     <section>
       <div class="container">
         <div class="section-head">
-          <h2>Gesundheitliche Vorteile</h2>
+          <h2>Warum Mayyah Thaimassage?</h2>
           <p>
-            Eine gute Thai-Massage kann nicht nur entspannen, sondern auch das allgemeine Wohlbefinden verbessern.
+            Eine gute Thai-Massage kann weit mehr als nur entspannen – sie kann Ihr allgemeines
+            Wohlbefinden positiv unterstützen und neue Energie schenken.
           </p>
         </div>
 
-        <div class="feature-grid">
+        <div class="benefit-grid">
           <div class="feature-box">
-            <h3>Lockerung</h3>
-            <p>Kann Muskeln entspannen und Verspannungen gezielt lösen.</p>
+            <h3>Lockerung & Entspannung</h3>
+            <p>
+              Die Massage kann Muskeln lockern, Verspannungen lösen und ein angenehmes Körpergefühl fördern.
+            </p>
           </div>
           <div class="feature-box">
             <h3>Beweglichkeit</h3>
-            <p>Kann die Mobilität von Muskeln und Gelenken fördern.</p>
+            <p>
+              Durch Dehnungen und gezielte Grifftechniken kann die Beweglichkeit von Muskeln und Gelenken verbessert werden.
+            </p>
           </div>
           <div class="feature-box">
             <h3>Durchblutung</h3>
-            <p>Kann die Blutzirkulation unterstützen und den Körper aktivieren.</p>
-          </div>
-          <div class="feature-box">
-            <h3>Stressabbau</h3>
-            <p>Wirkt beruhigend auf Körper und Geist und kann innere Unruhe reduzieren.</p>
+            <p>
+              Die Behandlung kann die Blutzirkulation anregen und den Körper positiv aktivieren.
+            </p>
           </div>
           <div class="feature-box">
             <h3>Regeneration</h3>
-            <p>Kann Erholung und Wohlbefinden nach Belastung oder stressigem Alltag fördern.</p>
+            <p>
+              Nach körperlicher Belastung oder einem stressigen Alltag kann die Massage Erholung und Wohlbefinden fördern.
+            </p>
+          </div>
+          <div class="feature-box">
+            <h3>Stressabbau</h3>
+            <p>
+              Viele Kundinnen und Kunden empfinden Thai-Massagen als beruhigend, ausgleichend und mental entlastend.
+            </p>
           </div>
           <div class="feature-box">
             <h3>Schlaf & Balance</h3>
-            <p>Viele Kundinnen und Kunden empfinden die Behandlung als schlaffördernd und ausgleichend.</p>
+            <p>
+              Entspannung auf körperlicher und geistiger Ebene kann zu mehr innerer Ruhe und besserem Schlaf beitragen.
+            </p>
+          </div>
+        </div>
+
+        <div class="highlights" style="margin-top:24px;">
+          <div class="highlight-box">
+            <h3>Unser Hygieneversprechen</h3>
+            <p>
+              Hygiene und Sauberkeit haben bei uns oberste Priorität. Wir nutzen medizinische Schutzauflagen,
+              die nach jeder Benutzung gewechselt werden, und achten in allen Bereichen auf ein gepflegtes,
+              professionelles Umfeld.
+            </p>
+          </div>
+          <div class="highlight-box">
+            <h3>Frische & gepflegte Raumluft</h3>
+            <p>
+              Zur Unterstützung einer angenehmen Studioatmosphäre kommen Luftreiniger des Typs
+              <strong>TruSens Z3000</strong> zum Einsatz. So unterstreichen wir unseren Anspruch an
+              Sauberkeit, Frische und ein angenehmes Raumklima.
+            </p>
           </div>
         </div>
       </div>
@@ -1188,10 +1387,12 @@
           <div class="info-box">
             <h3 style="font-size:2rem;color:#fff7e3;margin-bottom:12px;">Wellness als Geschenkidee</h3>
             <p>
-              Unsere Gutscheine eignen sich ideal für Geburtstage, Feiertage, Jubiläen oder einfach als liebevolle Aufmerksamkeit.
+              Unsere Gutscheine eignen sich ideal für Geburtstage, Feiertage, Jubiläen oder einfach
+              als liebevolle Aufmerksamkeit für Familie, Freunde oder Partner.
             </p>
             <p style="margin-top:14px;">
-              Fragen Sie uns direkt per WhatsApp oder telefonisch nach Ihrem persönlichen Gutschein.
+              Der Gutschein kann flexibel für unsere Massageangebote eingesetzt werden und ist eine
+              stilvolle Geschenkidee für alle, die Entspannung und Erholung schätzen.
             </p>
 
             <div class="cta-row">
@@ -1212,19 +1413,19 @@
         <div class="section-head">
           <h2>Studio-Eindrücke</h2>
           <p>
-            Einblicke in unser Studio, die Behandlungsräume und die ruhige Atmosphäre vor Ort.
+            Entdecken Sie die ruhige, gepflegte und hochwertige Atmosphäre unseres Studios in Odenthal.
           </p>
         </div>
 
         <div class="gallery-grid">
           <div class="gallery-card">
-            <img src="images/empfang.webp" alt="Empfangsbereich von Mayyah Thaimassage" />
+            <img src="images/studio1.webp" alt="Studioansicht Mayyah Thaimassage" />
           </div>
           <div class="gallery-card">
-            <img src="images/thaimassage.webp" alt="Behandlungsraum Thai Massage" />
+            <img src="images/studio2.webp" alt="Behandlungsraum Mayyah Thaimassage" />
           </div>
           <div class="gallery-card">
-            <img src="images/hotstone.webp" alt="Hot Stone Massage Ambiente" />
+            <img src="images/studio3.webp" alt="Wellness Ambiente Mayyah Thaimassage" />
           </div>
         </div>
       </div>
@@ -1235,7 +1436,7 @@
         <div class="section-head">
           <h2>Anfahrt & Standort</h2>
           <p>
-            Sie finden uns zentral in Odenthal. Nutzen Sie gern die direkte Routenplanung.
+            Sie finden uns zentral in Odenthal. Die Anfahrt ist bequem, Parkplätze stehen direkt am Haus zur Verfügung.
           </p>
         </div>
 
@@ -1246,6 +1447,7 @@
               <div><strong>Mayyah Thaimassage</strong></div>
               <div>Hauptstraße 53a</div>
               <div>51519 Odenthal</div>
+              <div><strong>Parken:</strong> kostenlos direkt am Haus</div>
             </div>
 
             <div class="cta-row">
@@ -1286,9 +1488,9 @@
     <section id="kontakt">
       <div class="container">
         <div class="section-head">
-          <h2>Kontakt & Termin</h2>
+          <h2>Kontakt & Reservierung</h2>
           <p>
-            Vereinbaren Sie Ihren Termin schnell und unkompliziert – am besten direkt über WhatsApp oder telefonisch.
+            Vereinbaren Sie Ihren Termin schnell und unkompliziert – am besten direkt per WhatsApp oder telefonisch.
           </p>
         </div>
 
@@ -1332,6 +1534,16 @@
       <span>Hauptstraße 53a · 51519 Odenthal · Tel.: 02174 7401974 · WhatsApp: 0176 43195587</span>
     </div>
   </footer>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/4917643195587"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp öffnen"
+  >
+    WhatsApp
+  </a>
 
 </body>
 </html>
